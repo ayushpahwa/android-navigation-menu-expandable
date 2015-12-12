@@ -2,29 +2,35 @@ package com.exun.test.navexpandablelist;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by root on 11/12/15.
  */
 public class NavAdapter extends BaseExpandableListAdapter {
 
-    public ArrayList<String> groupItem, tempChild;
-    public ArrayList<Object> Childtem = new ArrayList<Object>();
     public LayoutInflater minflater;
     public Activity activity;
-    private final Context context;
+    private Context _context;
+    private List<String> _listDataHeader; // header titles
+    // child data in format of header title, child title
+    private HashMap<String, List<String>> _listDataChild;
 
-    public NavAdapter(Context context,ArrayList<String> grList, ArrayList<Object> childItem) {
-        this.context = context;
-        groupItem = grList;
-        this.Childtem = childItem;
+    public NavAdapter(Context context, List<String> listDataHeader,
+                      HashMap<String, List<String>> listChildData) {
+        this._context = context;
+        this._listDataHeader = listDataHeader;
+        this._listDataChild = listChildData;
     }
 
     public void setInflater(LayoutInflater mInflater, Activity act) {
@@ -33,44 +39,54 @@ public class NavAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public Object getChild(int groupPosition, int childPosition) {
-        return null;
+    public Object getChild(int groupPosition, int childPosititon) {
+        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
+                .get(childPosititon);
     }
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        return 0;
+        return childPosition;
     }
 
     @Override
     public View getChildView(int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        tempChild = (ArrayList<String>) Childtem.get(groupPosition);
-        TextView text = null;
+
+        final String childText = (String) getChild(groupPosition, childPosition);
+
         if (convertView == null) {
-            convertView = new TextView(context);
+            LayoutInflater infalInflater = (LayoutInflater) this._context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = infalInflater.inflate(R.layout.list_item, null);
         }
-        text = (TextView) convertView;
-        text.setText(">"+tempChild.get(childPosition));
-        convertView.setTag(tempChild.get(childPosition));
+
+        TextView txtListChild = (TextView) convertView
+                .findViewById(R.id.lblListItem);
+
+        txtListChild.setText(childText);
         return convertView;
     }
 
-
-
     @Override
     public int getChildrenCount(int groupPosition) {
-        return ((ArrayList<String>) Childtem.get(groupPosition)).size();
+        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
+                .size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return null;
+        return this._listDataHeader.get(groupPosition);
     }
 
     @Override
     public int getGroupCount() {
-        return groupItem.size();
+        return this._listDataHeader.size();
+    }
+
+    @Override
+    public long getGroupId(int groupPosition) {
+        return groupPosition;
     }
 
     @Override
@@ -84,18 +100,20 @@ public class NavAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public long getGroupId(int groupPosition) {
-        return 0;
-    }
-
-    @Override
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
+        String headerTitle = (String) getGroup(groupPosition);
         if (convertView == null) {
-            convertView = new TextView(context);
+            LayoutInflater infalInflater = (LayoutInflater) this._context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = infalInflater.inflate(R.layout.list_group, null);
         }
-        ((TextView) convertView).setText(groupItem.get(groupPosition));
-        convertView.setTag(groupItem.get(groupPosition));
+
+        TextView lblListHeader = (TextView) convertView
+                .findViewById(R.id.lblListHeader);
+        lblListHeader.setTypeface(null, Typeface.BOLD);
+        lblListHeader.setText(headerTitle);
+
         return convertView;
     }
 
@@ -106,6 +124,7 @@ public class NavAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
+
 }

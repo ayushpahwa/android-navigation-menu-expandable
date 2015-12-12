@@ -31,24 +31,13 @@
 
     </LinearLayout>
 
-
     <ExpandableListView
         android:id="@+id/left_drawer"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#111"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
-
-    <ExpandableListView
-        android:id="@+id/left__drawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="#111"
-        android:choiceMode="singleChoice"
+        android:background="#fff"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 

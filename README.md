@@ -2,7 +2,7 @@
 
 Sample android app for navigation menu with expandable list items in material design.
 
-![Screenshot](https://github.com/D8thReaper/android-navigation-menu-expandable/screen.jpg)
+![Screenshot](https://github.com/D8thReaper/android-navigation-menu-expandable/blob/master/screen.jpg)
 
 
 # Features

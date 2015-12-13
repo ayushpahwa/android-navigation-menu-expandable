@@ -6,4 +6,8 @@
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#FF80AB</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_background_pressed">#d8d8d8</color>
+    <color name="list_background">#fff</color>
+    <color name="list_item_title">#d3d3d3</color>
 </resources>

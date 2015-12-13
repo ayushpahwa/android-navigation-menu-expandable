@@ -16,6 +16,30 @@
         <item>@string/nav_item_notifications</item>
     </string-array>
 
+    <string-array name="elements_home">
+        <item>Babha</item>
+        <item>Gandhi</item>
+        <item>Nehru</item>
+        <item>Tagore</item>
+    </string-array>
+
+    <string-array name="elements_friends">
+        <item>Rachel</item>
+        <item>Ross</item>
+        <item>Monica</item>
+        <item>Phoebe</item>
+        <item>Chandler</item>
+        <item>Joey</item>
+    </string-array>
+
+    <string-array name="elements_notifs">
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Pink!</item>
+    </string-array>
+
     <string name="title_messages">Messages</string>
     <string name="title_friends">Friends</string>
     <string name="title_home">Home</string>

@@ -1,19 +1,19 @@
 # Navigation menu with expandable list items
------
-Android navigation menu with expandable list items in material design.
 
-![Screenshot]({{site.baseurl}}//photo286193269324490842.jpg)
+Sample android app for navigation menu with expandable list items in material design.
+
+![Screenshot](http://imgur.com/PER0TfS)
 
 
 # Features
-------
+
 - Implemented using material design
 - Easy to use
 - Uses an expandable list view
 
 
 # Working
-------
+
 ## Layout 
 Add a toolbar in your layout.
 
@@ -52,7 +52,7 @@ Make a new class with BaseExpandableListAdapter
    
 
 # Acknowledgments
---------
+
 
 - [Ayush Pahwa](github.com/D8thReaper)
 - [AndroidHive introduction to material design](http://www.androidhive.info/2015/04/android-getting-started-with-material-design/) for developing with material design

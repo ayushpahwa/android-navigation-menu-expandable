@@ -13,6 +13,7 @@
         android:paddingTop="5dp"
         android:text="Hello"
         android:paddingBottom="5dp"
-        android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+        android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+        />
 
 </LinearLayout>

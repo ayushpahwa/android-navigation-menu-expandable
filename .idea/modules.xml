@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NavExpandableList.iml" filepath="$PROJECT_DIR$/NavExpandableList.iml" />
+      <module fileurl="file://D:\Apoorv\JVS\Test\ExpandableNavbar-Downloaded\2\android-navigation-menu-expandable-master\NavExpandableList.iml" filepath="D:\Apoorv\JVS\Test\ExpandableNavbar-Downloaded\2\android-navigation-menu-expandable-master\NavExpandableList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-navigation-menu-expandable-master.iml" filepath="$PROJECT_DIR$/android-navigation-menu-expandable-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
